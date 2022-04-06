@@ -21,22 +21,22 @@
     </div>
     <script type="text/babel">
         /*
-            1.  Utilisation des props : Utilisation de données dynamiques.
-                - Avec les composants de type class Javascript
+            1.  Utilisation des states : Utilisation de données dynamiques par la gestion des etats. Permet 
+                l'integration d'éléments interactifs.
+                - On les utilise sur les composant de type class
+                On crée un constucteur appeler avant la méthodes render et qui prends en paramètre
+                -  de type  Avec les composants de type class Javascript
                 - Avec les composants dynamiques 
         */
-
-        // Exploration des props : Les propiétés paramétrables des composants. Utilisation de données dynamiques.
-        // L'exemple avec un composant de type class avec la methode render et le return
-        // Se faisant je peux envoyer plusieurs propriétés comme ici messages et numero 
-        // Dans les composants fonctionnel on a pas accvès au this
+       
+        //
 
         // Avec les composants de type class Javascript
         class Moncomposant1 extends React.Component {
             render() {
                 return (
                     <div id="title">
-                        <h1 className="heading">Bonjour en {this.props.langage} numero : {this.props.numero}</h1>
+                        <h1 className="heading">Bonjour en{this.props.langage} numero : {this.props.numero}</h1>
                     </div>
                     ) // afficher la propriété messages
             }
@@ -45,14 +45,14 @@
         // Avec les composants dynamiques
         const Moncomposant2 = (props) => (
             <div id="title">
-                <h1 className="heading">Bonjour en {props.langage} numéro : {props.numero} </h1>
+                <h1 className="heading">Bonjour en {props.langage} React numéro : {props.numero} </h1>
             </div>
             );
         
         // ReactDOM : Injection dans la Div
         ReactDOM.render(
-            <Moncomposant1 langage="React" numero={1}></Moncomposant1>, // Séparation par des virgule dans le reactDOM
-            // <Moncomposant2 langage="React" numero={2}></Moncomposant2>,
+            // <Moncomposant1 langage="React" numero={1}></Moncomposant1>, // Séparation par des virgule dans le reactDOM
+            <Moncomposant2 langage="React" numero={2}></Moncomposant2>,
             document.getElementById('react-root')
         )
 
