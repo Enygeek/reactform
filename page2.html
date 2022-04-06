@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React - React 2</title>
+    <!-- Script : React unpkg -->
+    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <!-- <script src="https://unpkg.com/browse/babel-standalone@6.26.0/babel.min.js"></script> -->
+    <script src="babel.js"></script>
+</head>
+</head>
+<body>
+    <div id="react-root">
+
+    </div>
+    <script type="text/babel">
+
+        // Création de composant
+        class Bonjour extends React.Component {
+            render() {
+                return <h1>Bonjour en React</h1>
+            }
+        }
+        // ReactDOM : Spéccification de la partie du DOM où l'on souhaite ajouter le bout de code JSX
+        ReactDOM.render(
+            <Bonjour></Bonjour>,
+            // <h1>Bonjour en React</h1>,
+            // React.createElement('h1',null,'Bonjour en react'), // createElement(Element,Properties,Child)
+            document.getElementById('react-root')
+        )
+
+        /*
+            Utilisation de JSX : Javascript hese XML permet l'utilistion de balises et donc syntaxe html dans le javascript.
+            JSX est une exention qui n'est pas compris par les navigateurs, on doit pour cela compiler le code JSX en du Javascript 
+            classique à l'aide de Babel.
+            Babel : permet de compiler different dialect du Javascript en du Javascript classique nativement compris par les naviagteur.
+        */
+
+       
+    </script>
+</body>
+</html>

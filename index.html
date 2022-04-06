@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Test</title>
+</head>
+<body>
+    <!-- 
+        Les mises à jours de javascript ES6
+        let : Déclaration de variable visible seulement à l'intérieur d'un bloc de code
+        const : declaration de constante     
+     -->
+
+    <script>
+        /* == Déclaration et appel de fonction == */
+        
+        function add() {             //   1
+            return 2+4;              
+        }
+        var add = ()=> {             //   2
+            return 2+3;
+        }
+        var add = ()=> (2+4);        //   3
+
+        console.log(add()) // Appel de la fonction
+    
+        // Fonction parametrée
+        var add1 = (x,y)=> (x+y); 
+        console.log(add1(1,2));
+
+        var employe = ["Kevin", "Jean"]
+        var tab = employe.concat("jean");
+        var newTab = [...employe, "Mathieu"] // le spread operator
+
+        console.log(tab)
+        console.log(newTab)
+
+        var moi = {
+            menom : 'Zabra',
+            meprenom : 'Enoch'
+        }
+        function aboutMe (moi) {
+            console.log(`Je m\'appel ${moi.menom} ${moi.meprenom}`)
+        }
+
+        aboutMe(moi)
+
+
+        var person = {
+            fName: 'Damien',
+            lName: 'Bruyndonckx'
+        }
+
+        function logName({fName,lName}){
+            console.log(`Vous vous appelez ${fName} ${lName}`)
+        }
+
+        logName(person)
+
+    </script>
+</body>
+</html>
