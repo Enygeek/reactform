@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React - React 2</title>
     <!-- Script : React unpkg -->
-    <script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
     <!-- <script src="https://unpkg.com/browse/babel-standalone@6.26.0/babel.min.js"></script> -->
-    <script src="babel.js"></script>
+    <script src="assets/babel.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="assets/style.css">
+
 </head>
 </head>
 <body>
     <div id="react-root">
-
+        <!-- Div dans laquelle j'injecte le code React -->
     </div>
     <script type="text/babel">
         /*
@@ -25,6 +28,7 @@
                 classique à l'aide de Babel.
                 Babel : permet de compiler different dialect du Javascript en du Javascript classique nativement compris par les naviagteur. 
             3.  Création de composant React (Class Javascript) et de composant fonctionnel (Function à flèche ES6 de Javacript)
+            4.  Utilisation de la mise en forme : CSS
         */
 
         // Création de composant
@@ -36,13 +40,17 @@
 
         // La création de composant fonctionnelle se fait nom par des classes Javascript mais par des function à flèche de la
         // version ES6 de Javascript. Il s'agit d'une function qui retunr par defaut tout ce qui se trouve de m'autre coté de la flèche.
-        const Bonjour2 = () => <h1>Bonjour une seconde fois en React</h1>
+        const Bonjour2 = () => (
+            <div id="title">
+                <h1>Bonjour une seconde fois en React</h1>
+            </div>
+            );
 
 
         // ReactDOM : Spéccification de la partie du DOM où l'on souhaite ajouter le bout de code JSX
         ReactDOM.render(
-            <Bonjour></Bonjour>, // Composant
-            <Bonjour2></Bonjour2>, // Composant fonctionnel
+            //<Bonjour></Bonjour>,    // Composant
+            <Bonjour2></Bonjour2>,  // Composant fonctionnel
             // <h1>Bonjour en React</h1>,
             // React.createElement('h1',null,'Bonjour en react'), // createElement(Element,Properties,Child)
             document.getElementById('react-root')
